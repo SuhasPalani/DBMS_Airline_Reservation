@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title> Airliness</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  {% block header %}
+  
+  <h4> </h4> 
+  
+  {% endblock header %}
+  
+
+  <!-- =======================================================
+  * Template Name: Squadfree - v4.7.0
+  * Template URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+
+        
+<div class="contaier mt-4">
+    <br>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+
+            <div class="card">
+                
+                <h2>  </h2>
+                <h4 class="text-center">Update your order !</h4>
+                <div class="card-body bg-light" >
+                    <form action="/edit/{{orders.bid}}" method="post">
+                        <br>
+                        <div class="form-group">
+                            <input type="text" class="form-control mt-2" name="fid" placeholder="Enter Flight ID" value="{{orders.fid}}" required>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="seats">Choose a Seat : </label>
+                               <select name="sid">
+                               <option value="{{orders.seat}}" selected >{{orders.seat}}</option>
+                               <option value="A1">A1</option>
+                               <option value="A2">A2</option>
+                               <option value="A3">A3</option>
+                               <option value="A4">A4</option>
+                               <option value="A5">A5</option>
+                               <option value="B1">B1</option>
+                               <option value="B2">B2</option>
+                               <option value="B2">B3</option>
+                               <option value="B2">B4</option>
+                               <option value="B2">B5</option>
+                               <option value="C3">C1</option>
+                               <option value="C3">C2</option>
+                               <option value="C3">C3</option>
+                               <option value="C3">C4</option>
+                               <option value="C3">C5</option>
+                               <option value="D1">D1</option>
+                               <option value="D2">D2</option>
+                               <option value="D3">D3</option>
+                               <option value="D4">D4</option>
+                               <option value="D5">D5</option>
+                               <option value="E1">E1</option>
+                               <option value="E2">E2</option>
+                               <option value="E3">E3</option>
+                               <option value="E4">E4</option>
+                               <option value="E5">E5</option>
+                               </select> 
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="meal">Choose a Meal : </label>
+                               <select name="mid">
+                               <option value="{{orders.mid}}" selected >{{orders.mid}}</option>
+                               <option value="1">Veg Meal</option>
+                               <option value="2">Chicken Meal</option>
+                               <option value="3">Sea Food Meal</option>
+                               </select> 
+                        </div>
+                        
+                        <br>
+                        <button class="btn btn-info" type="submit">Update</button>
+
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4"></div>
+
+    </div>
+
+</div>

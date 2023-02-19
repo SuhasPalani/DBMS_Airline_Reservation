@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<h2>User Signup</h2>
+
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4"></div>
+
+    <div class="col-md-4">
+        <form action="/signupdata" method="post">
+            <div class="form-group">
+                <input type="text" class='form-control mt-2' placeholder="Enter Name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <input type="email" class='form-control mt-2' placeholder="Enter e-mail id" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <input type="date" class='form-control mt-2' placeholder="Enter DOB" name="dob" required>
+            </div>
+
+            <div class="form-group">
+                <input type="tel" class='form-control mt-2' placeholder="Enter Phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <input type="password" class='form-control mt-2' placeholder="Set passsword" name="password" required>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-info">Signup</button>
+        </form>
+        <br>
+        <a class='text-success' href="/login">Login</a>
+
+    </div>
+
+    <div class="col-md-4"></div>
+</div>
+{% endblock %}

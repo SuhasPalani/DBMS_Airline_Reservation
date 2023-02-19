@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+#reserve
+{% block title %}
+{% endblock %}
+{% block content %}
+<div class="contaier mt-4">
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+
+            <div class="card">
+                {% include "message.html" %}
+                <h2>  </h2>
+                <h4 class="text-center">Bookings!</h4>
+                <div class="card-body bg-light" >
+                    <form action="/bookingsdata" method="post">
+                        <br>
+                        <div class="form-group">
+                            <input type="text" class="form-control mt-2" name="fid" placeholder="Enter Flight ID" value={{flightdata.fid}} readonly required>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="seats">Choose a Seat : </label>
+                               <select name="sid">
+                              <option value="none" selected disabled hidden>Select an Option</option>
+                               <option value="A1">A1</option>
+                               <option value="A2">A2</option>
+                               <option value="A3">A3</option>
+                               <option value="A4">A4</option>
+                               <option value="A5">A5</option>
+                               <option value="B1">B1</option>
+                               <option value="B2">B2</option>
+                               <option value="B2">B3</option>
+                               <option value="B2">B4</option>
+                               <option value="B2">B5</option>
+                               <option value="C3">C1</option>
+                               <option value="C3">C2</option>
+                               <option value="C3">C3</option>
+                               <option value="C3">C4</option>
+                               <option value="C3">C5</option>
+                               <option value="D1">D1</option>
+                               <option value="D2">D2</option>
+                               <option value="D3">D3</option>
+                               <option value="D4">D4</option>
+                               <option value="D5">D5</option>
+                               <option value="E1">E1</option>
+                               <option value="E2">E2</option>
+                               <option value="E3">E3</option>
+                               <option value="E4">E4</option>
+                               <option value="E5">E5</option>
+                               </select> 
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="meal">Choose a Meal : </label>
+                               <select name="mid">
+                               <option value="none" selected disabled hidden>Select an Option</option>
+                               <option value="1">Veg Meal</option>
+                               <option value="2">Non-Veg Meal</option>
+                               <option value="3">Italian Meal</option>
+                               <option value="4">Sea Food Meal</option>
+                               <option value="5">Chinese Meal</option>
+                               </select> 
+                        </div>   
+                        <br>
+                        <button class="btn btn-info" type="submit">Book</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+           <div class="col-md-8">
+            <div class="card mb-3" >
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="https://source.unsplash.com/random/900×1300/?airline" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body bg-light">
+                      <h5 class="card-title">Flight Information</h5>
+                      <br>
+                      <div class="card" style="width: 28rem;">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">User ID : <b>{{userdata.id}}</b></li>
+                          <li class="list-group-item">Passanger Name : <b>{{userdata.name}}</b></li>
+                          <li class="list-group-item">Flight ID : <b>{{flightdata.fid}}</b> </li>
+                          <li class="list-group-item">Flight Date : <b>{{flightdata.date}}</b></li>
+                          <li class="list-group-item">Flight Time : <b>{{flightdata.time}}</b></li>
+                          <li class="list-group-item">Flight Boarding : <b>{{airportdata.aname}}</b></li>
+                          <li class="list-group-item">Flight Source : <b>{{flightdata.source}}</b></li>
+                          <li class="list-group-item">Flight Destination : <b>{{flightdata.destination}}</b></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

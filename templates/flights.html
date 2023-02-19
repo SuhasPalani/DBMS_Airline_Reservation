@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% endblock title %}
+
+{% block content %}
+
+<div class="contaier mt-4">
+    <div class="row">
+        <div class="col-md-4">
+
+            <div class="card">
+                {% include "message.html" %}
+                <h2> </h2>
+                <h4 class="text-center">Search Flights</h4>
+                <div class="card-body bg-light">
+                    <form action="/flights" method="post">
+                        <div class="form-group">
+                            <label for="locations">Choose Source : </label>
+                            <select name="source">
+                                <option value="None" selected disabled hidden>Select an Option</option>
+                                <option value="Bangalore">Bangalore</option>
+                                <option value="Chennai">Chennai</option>
+                                <option value="Goa">Goa</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Mumbai">Mumbai</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="locations">Choose a Destination : </label>
+                            <select name="destination">
+                                <option value="None" selected disabled hidden>Select an Option</option>
+                                <option value="Bangalore">Bangalore</option>
+                                <option value="Chennai">Chennai</option>
+                                <option value="Goa">Goa</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Mumbai">Mumbai</option>
+                            </select>
+                        </div>
+                        <br>
+                        <label for="date">Choose Date of departure:</label>
+                        <input type="date" class='form-group' placeholder="Enter Date" name="date" required>
+                        <br>
+                        <br>
+                        <button type="submit" class="btn btn-info">Search Flights</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-8">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Flight ID</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Airport</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for flights in flightdata %}
+                    <tr>
+                        <th scope="row">{{flights.fid}}</th>
+                        <td>{{flights.time}}</td>
+                        <td>{{flights.airport_id}}</td>
+                        <td>{{flights.price}}</td>
+                        <td>
+                            <form action="/bookings" method="post">
+                                <div class="form-group">
+                                    <a href="/bookings"><button type="submit" class="btn btn-info" value={{flights.fid}}
+                                            name="fid">Book</button></a>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

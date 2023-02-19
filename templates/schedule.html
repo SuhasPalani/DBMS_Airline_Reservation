@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+{% endblock title %}
+
+{% block content %}
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Flight ID</th>
+        <th scope="col">Source</th>
+        <th scope="col">Destination</th>
+        <th scope="col">Date</th>
+        <th scope="col">Time</th>
+        <th scope="col">Airport</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for orders in orderdata %}
+
+      <tr>
+        <th scope="row">{{orders.bid}}</th>
+        <td>{{orders.uid}}</td>
+        <td>{{orders.fid}}</td>
+        <td>{{orders.seat}}</td>
+        <td>{{orders.mid}}</td>
+        
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}
